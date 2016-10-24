@@ -102,6 +102,13 @@ if ( !class_exists('mirza_related_posts') ) {
 				wp_die();
 			}
 
+			if ( !get_post_status ( $post_id ) ) {
+				$return_array["status"]     = false;
+				$return_array["message"]    = "The post is not exists anymore or you are in wrong place.";
+				echo json_encode($return_array);
+				wp_die();
+			}
+
 			$ajax_posts = array();
 			$args = array(
 				'numberposts'   => $limit,
