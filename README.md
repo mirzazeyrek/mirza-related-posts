@@ -1,5 +1,5 @@
-# mirza-related-posts
-An ajax based related posts plug-in for wordpress.
+# Mirza Related Posts - MRP v1.0
+An ajax based related posts plug-in for wordpress. Simple, fast and secure :)
 
 For install download zip file from here:
 
