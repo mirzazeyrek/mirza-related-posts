@@ -16,7 +16,7 @@ if(!defined('ABSPATH')) exit;
 if ( !class_exists('mirza_related_posts') ) {
 	class mirza_related_posts {
 
-		private $debug = true;
+		private $debug = false;
 
 		function __construct() {
 
@@ -28,11 +28,14 @@ if ( !class_exists('mirza_related_posts') ) {
 
 			// inject jquery
 			add_action( 'wp_enqueue_scripts', array(&$this, 'enqueue_related_posts_jquery') );
-			// enable ajax calls
+			// enable ajax calls for logged out users
+			add_action('wp_ajax_nopriv_get_related_posts', array(&$this, 'get_related_posts') );
+			// enable ajax calls for logged in users
 			add_action('wp_ajax_get_related_posts', array(&$this, 'get_related_posts') );
 			// append related articles link into the content
 			// https://codex.wordpress.org/Plugin_API/Filter_Reference/the_content
 			add_action( 'the_content', array( &$this, 'create_related_posts_link' ), 10 );
+
 		}
 
 
