@@ -7,4 +7,4 @@ For install download zip file from here:
 
 2- Go to plug-ins -> add new -> upload plugin and choose downloaded zip file.
 
-#jenkins check 14-22
+#jenkins check 2 development
